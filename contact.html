@@ -1,120 +1,99 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ติดต่อ | จิรภัทร อิ่มทอง</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ติดต่อ | จิรภัทร อิ่มทอง</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="site-header">
-    <a href="index.html" class="logo">จิรภัทร อิ่มทอง</a>
-
-    <button class="menu-toggle" id="menu-toggle"
-        aria-label="เปิดปิดเมนู" aria-expanded="false">☰</button>
-
-    <nav class="site-nav">
-        <ul>
-            <li><a href="index.html">หน้าแรก</a></li>
-            <li><a href="experience.html">ประสบการณ์</a></li>
-            <li><a href="projects.html">ผลงาน</a></li>
-            <li><a href="contact.html" class="active">ติดต่อ</a></li>
-        </ul>
-    </nav>
-</header>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">จิรภัทร อิ่มทอง</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="เปิดปิดเมนู" aria-expanded="false">☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">หน้าแรก</a>
+      <a href="experience.html">ประสบการณ์</a>
+      <a href="projects.html">ผลงาน</a>
+      <a href="contact.html" class="active">ติดต่อ</a>
+    </div>
+  </div>
+</nav>
 
 <main>
 
-    <section class="page-head">
-        <h1>ติดต่อ</h1>
-        <p class="tagline">ยินดีรับฟังทุกโอกาสในการร่วมงาน</p>
-    </section>
+  <div class="page-header">
+    <h1>ติดต่อ</h1>
+    <p>ยินดีรับฟังทุกโอกาสในการร่วมงาน</p>
+  </div>
 
-    <section>
+  <div class="contact-grid">
+
+    <div class="card" style="margin-bottom: 0;">
+      <div class="sec-head">
+        <span class="icon">📬</span>
         <h2>ช่องทางการติดต่อ</h2>
+        <div class="bar"></div>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-info">
+            <label>อีเมล</label>
+            <a href="mailto:imthong_j@su.ac.th">imthong_j@su.ac.th</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div class="contact-info">
+            <label>โทรศัพท์</label>
+            <a href="tel:+66834941176">083-494-1176</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🐙</div>
+          <div class="contact-info">
+            <label>GitHub</label>
+            <a href="https://github.com/imthongj-debug" target="_blank" rel="noopener">github.com/imthongj-debug</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <ul class="contact-list">
-
-            <li>
-                <span class="label">อีเมล</span>
-                <a href="mailto:sakrapee@example.com">
-                    imthong_j@su.ac.th
-                </a>
-            </li>
-
-            <li>
-                <span class="label">โทรศัพท์</span>
-                <a href="tel:+66812345678">
-                    081-234-5678
-                </a>
-            </li>
-
-            <li>
-                <span class="label">GitHub</span>
-                <a href="https://github.com/username"
-                   target="_blank" rel="noopener">
-                    github.com/username
-                </a>
-            </li>
-
-            <li>
-                <span class="label">LinkedIn</span>
-                <a href="https://linkedin.com/in/username"
-                   target="_blank" rel="noopener">
-                    linkedin.com/in/username
-                </a>
-            </li>
-
-        </ul>
-    </section>
-
-    <section>
+    <div class="card" style="margin-bottom: 0;">
+      <div class="sec-head">
+        <span class="icon">💬</span>
         <h2>ส่งข้อความถึงผม</h2>
+        <div class="bar"></div>
+      </div>
+      <form action="https://formspree.io/f/YOURID" method="POST">
+        <div class="form-field">
+          <label for="name">ชื่อของคุณ</label>
+          <input type="text" id="name" name="name" placeholder="ชื่อ-นามสกุล" required>
+        </div>
+        <div class="form-field">
+          <label for="email">อีเมลของคุณ</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com" required>
+        </div>
+        <div class="form-field">
+          <label for="message">ข้อความ</label>
+          <textarea id="message" name="message" rows="5" placeholder="พิมพ์ข้อความที่นี่..." required></textarea>
+        </div>
+        <button type="submit" class="btn-accent">ส่งข้อความ →</button>
+      </form>
+    </div>
 
-        <form class="contact-form"
-              action="https://formspree.io/f/YOURID"
-              method="POST">
-
-            <div class="field">
-                <label for="name">ชื่อของคุณ</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-
-            <div class="field">
-                <label for="email">อีเมลของคุณ</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="field">
-                <label for="message">ข้อความ</label>
-                <textarea id="message"
-                          name="message"
-                          rows="5"
-                          required></textarea>
-            </div>
-
-            <button type="submit" class="btn">ส่งข้อความ</button>
-
-        </form>
-    </section>
+  </div>
 
 </main>
 
-<footer class="site-footer">
-    <p>&copy; 2569 จิรภัทร อิ่มทอง</p>
-    <p>สร้างด้วย HTML และ CSS</p>
+<footer>
+  <p>© 2569 จิรภัทร อิ่มทอง — สร้างด้วย HTML, CSS & ความใส่ใจ</p>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>

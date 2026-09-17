@@ -1,35 +1,30 @@
-// หา element ที่ต้องการจาก DOM
-const menuToggle = document.querySelector('#menu-toggle');
-const siteNav = document.querySelector('.site-nav');
+// ===== Mobile menu toggle =====
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
 
-// ตรวจก่อนว่าเจอจริง กันหน้าที่ไม่มีปุ่มนี้เกิด error
-if (menuToggle && siteNav) {
-    menuToggle.addEventListener('click', function () {
-        siteNav.classList.toggle('open');
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', function () {
+    const isOpen = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
 
-        // บอกโปรแกรมอ่านหน้าจอว่าตอนนี้เมนูเปิดหรือปิด
-        const isOpen = siteNav.classList.contains('open');
-        menuToggle.setAttribute('aria-expanded', isOpen);
+  // ปิดเมนูเมื่อคลิกลิงก์
+  navLinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', false);
     });
+  });
 }
 
-// หาชื่อไฟล์ของหน้าที่กำลังเปิดอยู่ เช่น "projects.html"
+// ===== Active nav link =====
 let currentPage = window.location.pathname.split('/').pop();
+if (currentPage === '') currentPage = 'index.html';
 
-// ถ้าเปิดที่รากของเว็บ ให้ถือว่าเป็น index.html
-if (currentPage === '') {
-    currentPage = 'index.html';
-}
-
-// วนดูลิงก์เมนูทุกตัว แล้วใส่ active ให้ตัวที่ตรงกับหน้าปัจจุบัน
-const navLinks = document.querySelectorAll('.site-nav a');
-
-navLinks.forEach(function (link) {
-    const linkPage = link.getAttribute('href');
-
-    if (linkPage === currentPage) {
-        link.classList.add('active');
-    } else {
-        link.classList.remove('active');
-    }
+document.querySelectorAll('.nav-links a').forEach(function (link) {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('active');
+  } else {
+    link.classList.remove('active');
+  }
 });
